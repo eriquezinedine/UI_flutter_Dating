@@ -142,59 +142,62 @@ class _CardDogState extends State<CardDog> {
                         ],
                       ),
                     ),
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.info.name,
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                '${widget.info.race}, ${widget.info.age} years',
-                                style: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                          AnimatedOpacity(
-                            duration: const Duration(milliseconds: 300),
-                            opacity: isActive ? 1 : 0,
-                            child: Column(
+                    Material(
+                      color: Colors.transparent,
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Transform.rotate(
-                                  angle: pi / 180 * -20,
-                                  child: IconDetail(
-                                    icon: Dating.pata,
-                                    colorIcon: Colors.white,
-                                    sizeIcon: 32,
-                                    gradient: Palette.gradientPink,
-                                    colorShadow: Palette.pink.withOpacity(.8),
+                                Text(
+                                  widget.info.name,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                const SizedBox(height: 16),
-                                IconDetail(
-                                  backgroundColor: Palette.yelow,
-                                  icon: Icons.star,
-                                  colorIcon: Colors.white,
-                                  sizeIcon: 32,
-                                  colorShadow: Palette.yelow.withOpacity(.55),
+                                Text(
+                                  '${widget.info.race}, ${widget.info.age} years',
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                                const SizedBox(height: 16),
                               ],
                             ),
-                          ),
-                        ])
+                            AnimatedOpacity(
+                              duration: const Duration(milliseconds: 300),
+                              opacity: isActive ? 1 : 0,
+                              child: Column(
+                                children: [
+                                  Transform.rotate(
+                                    angle: pi / 180 * -20,
+                                    child: IconDetail(
+                                      icon: Dating.pata,
+                                      colorIcon: Colors.white,
+                                      sizeIcon: 32,
+                                      gradient: Palette.gradientPink,
+                                      colorShadow: Palette.pink.withOpacity(.8),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  IconDetail(
+                                    backgroundColor: Palette.yelow,
+                                    icon: Icons.star,
+                                    colorIcon: Colors.white,
+                                    sizeIcon: 32,
+                                    colorShadow: Palette.yelow.withOpacity(.55),
+                                  ),
+                                  const SizedBox(height: 16),
+                                ],
+                              ),
+                            ),
+                          ]),
+                    )
                   ],
                 ),
               ),
