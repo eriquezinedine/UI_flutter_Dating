@@ -32,15 +32,17 @@ class _CardDogState extends State<CardDog> {
           isActive = !isActive;
         });
       },
-      onDoubleTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => DetailView(
-              detail: widget.info,
+      onLongPress: () {
+        if (!isActive) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailView(
+                detail: widget.info,
+              ),
             ),
-          ),
-        );
+          );
+        }
       },
       child: Transform.scale(
         scale: 0.9,

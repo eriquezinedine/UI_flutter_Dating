@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:dating_app/core/icons/dating_icons.dart';
 import 'package:dating_app/core/theme/palette.dart';
 import 'package:dating_app/presentation/detail/widget/icon_detail.dart';
 import 'package:dating_app/presentation/detail/widget/row_icons.dart';
@@ -99,16 +98,19 @@ class _ContainerImg extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          width: size.width,
-          height: size.height * .48,
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(35),
-          ),
-          child: Image.asset(
-            detail.img,
-            fit: BoxFit.cover,
+        Hero(
+          tag: detail.name,
+          child: Container(
+            width: size.width,
+            height: size.height * .48,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(35),
+            ),
+            child: Image.asset(
+              detail.img,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         Padding(

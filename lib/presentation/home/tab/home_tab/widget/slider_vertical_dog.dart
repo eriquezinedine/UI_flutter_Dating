@@ -1,7 +1,6 @@
 import 'package:dating_app/presentation/detail/detail_view.dart';
 import 'package:dating_app/presentation/home/models/slider_vertical.dart';
 import 'package:dating_app/presentation/home/widget/card_dog.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SliderVerticalDog extends StatelessWidget {
@@ -23,8 +22,11 @@ class SliderVerticalDog extends StatelessWidget {
                 ),
               );
             },
-            child: CardDog(
-              info: SliderVertical.data[index],
+            child: Hero(
+              tag: SliderVertical.data[index].name,
+              child: CardDog(
+                info: SliderVertical.data[index],
+              ),
             )),
       ),
     );
